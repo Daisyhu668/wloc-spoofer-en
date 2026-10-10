@@ -1,0 +1,5 @@
+{
+  "name": "daisy-wloc-picker",
+  "main": "wloc-standalone.js",
+  "compatibility_date": "2024-01-01"
+}
