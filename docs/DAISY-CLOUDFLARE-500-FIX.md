@@ -1,5 +1,8 @@
 # Cloudflare Worker 500：Daisy 修复步骤（2026-10-10）
 
+> **最新建议（2026-10-10）：优先用 Cloudflare 官方 GitHub 集成部署，避免手工复制。** 本仓库 `worker/wrangler.jsonc` 已在 commit `98a60987f68e4ccc72835f971a5e1b1ada6f96fa` 切换为 `main: wloc-standalone.js`，名称保持 `daisy-wloc-picker`。在 Cloudflare 已有 Worker 的 **Settings → Builds → Connect** 中连接 `Daisyhu668/wloc-spoofer-en`，Branch `main`，Root directory `worker`，Build command 留空，Deploy command `npx wrangler deploy`。授权 GitHub App 读取这个仓库即可；连接后按 Cloudflare 页面触发首轮部署或由用户在 GitHub 推送提交触发。无需重新建 Worker。故障页面的 Ray ID `a4852e46a87fa9c6` 可用于日志排查。官方说明：https://developers.cloudflare.com/workers/ci-cd/builds/ 。
+
+
 用户线上 Worker：**https://daisy-wloc-picker.coolkiy.workers.dev/**
 
 **当前状况：** Muse 报告线上返回 HTTP 500。代码仓库可读写，但 ChatGPT 没有用户 Cloudflare 账号的直接编辑/发布权限，因此这里的单文件验证不能替代线上部署。
