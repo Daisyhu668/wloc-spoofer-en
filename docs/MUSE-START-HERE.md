@@ -1,5 +1,8 @@
 # WLOC Daisy｜交给 Muse 的完整背景与部署任务书
 
+> **2026-10-10 线上 500 故障追加说明（必读）：** 用户现有 Worker 是 https://daisy-wloc-picker.coolkiy.workers.dev/ ，Muse 报告 HTTP 500。GPT 已提交一个**不依赖外部模块、同时支持选点页面与 /api/parse 的完整单文件版**到 [worker/wloc-standalone.js](../worker/wloc-standalone.js)。请优先阅读 [docs/DAISY-CLOUDFLARE-500-FIX.md](./DAISY-CLOUDFLARE-500-FIX.md)，直接用该文件部署，不要再将上游的 `worker/wloc-worker.js` 误当完整版本，因为它没有 `/api/parse`；也不要把特定压缩包尾部 `export{te as default};` 当作源码完整性标准。Cloudflare 的线上部署尚未被 GPT 验证。Muse 的 GitHub App 无写权限无碍：GPT 已经通过 GitHub 连接成功提交这些文件。
+
+
 > 更新时间：2026-10-10。此文件是目前唯一应采用的正式执行说明，优先于 Google Drive 内旧版 ZIP、旧版 `MUSE-HANDOFF.md` 和曾经暂定的 `wloc-private` 仓库名。
 >
 > **Muse 的定位：执行工程师。** 请在用户已授权的浏览器、GitHub 和 Cloudflare 账户中直接完成可做的步骤；只在需要登录授权或 iPhone 端确认时向用户提出最少的操作要求。不用重新讨论项目是否值得做，也不要重新创建仓库。
