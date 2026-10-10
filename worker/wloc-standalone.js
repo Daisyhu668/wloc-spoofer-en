@@ -7,6 +7,7 @@
  * Generated: 2026-10-10. Do not hand-edit minified bundles.
  */
 const BUILD_ID = "daisy-standalone-20261010";
+// Git-trigger verification 2026-10-11: no logic changes; Cloudflare Builds must deploy this main-branch commit.
 const CORS = {"Access-Control-Allow-Origin":"*","Access-Control-Allow-Methods":"GET, OPTIONS","Access-Control-Allow-Headers":"Content-Type"};
 function json(data,status=200){
   return new Response(JSON.stringify(data),{
